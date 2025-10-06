@@ -1,4 +1,5 @@
 import aboutPortrait from "@/assets/about-portrait.jpg";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const About = () => {
   const careerHighlights = [
@@ -51,17 +52,37 @@ const About = () => {
               <h4 className="text-xl font-semibold mb-4 text-accent">
                 Career Highlights
               </h4>
-              <div className="grid md:grid-cols-2 gap-3">
-                {careerHighlights.map((highlight, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-2 text-primary-foreground/80"
-                  >
-                    <span className="text-accent mt-1">▸</span>
-                    <span className="text-sm">{highlight}</span>
-                  </div>
-                ))}
+              
+              {/* Current Position - Highlighted */}
+              <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 mb-4">
+                <div className="flex items-start gap-2">
+                  <span className="text-accent mt-1">▸</span>
+                  <span className="text-base font-semibold text-primary-foreground">
+                    {careerHighlights[0]}
+                  </span>
+                </div>
               </div>
+
+              {/* Previous Positions - Collapsible */}
+              <Collapsible>
+                <CollapsibleTrigger className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-3">
+                  <span>Previous Positions</span>
+                  <span className="text-sm">▾</span>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {careerHighlights.slice(1).map((highlight, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-2 text-primary-foreground/80"
+                      >
+                        <span className="text-accent mt-1">▸</span>
+                        <span className="text-sm">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
             </div>
 
             <div>
