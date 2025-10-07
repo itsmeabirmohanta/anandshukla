@@ -1,10 +1,20 @@
 import { Linkedin, Youtube, Twitter, Facebook } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavigation = (sectionId: string) => {
+    // If we're on the home page, just scroll
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home page with section hash
+      navigate(`/#${sectionId}`);
     }
   };
 
@@ -21,30 +31,30 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
-          <button
-            onClick={() => scrollToSection("about")}
+          <Link
+            to="/about"
             className="text-sm sm:text-base text-foreground hover:text-accent transition-colors"
           >
             About Anand
-          </button>
+          </Link>
           <button
-            onClick={() => scrollToSection("invite")}
+            onClick={() => handleNavigation("invite")}
             className="text-sm sm:text-base text-foreground hover:text-accent transition-colors"
           >
             Invite Anand
           </button>
           <button
-            onClick={() => scrollToSection("videos")}
+            onClick={() => handleNavigation("videos")}
             className="text-sm sm:text-base text-foreground hover:text-accent transition-colors"
           >
-            Blog
+            Videos
           </button>
-          <button
-            onClick={() => scrollToSection("contact")}
+          <Link
+            to="/contact"
             className="text-sm sm:text-base text-foreground hover:text-accent transition-colors"
           >
             Contact
-          </button>
+          </Link>
         </div>
 
         <div className="flex justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -81,15 +91,15 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4 sm:mb-6 text-xs sm:text-sm text-muted-foreground">
-          <a href="#" className="hover:text-accent transition-colors">
+          <Link to="/privacy" className="hover:text-accent transition-colors">
             Privacy Policy
-          </a>
-          <a href="#" className="hover:text-accent transition-colors">
-            Terms of Use
-          </a>
-          <a href="#" className="hover:text-accent transition-colors">
-            Disclaimer
-          </a>
+          </Link>
+          <Link to="/terms" className="hover:text-accent transition-colors">
+            Terms of Service
+          </Link>
+          <Link to="/contact" className="hover:text-accent transition-colors">
+            Contact Us
+          </Link>
         </div>
 
         <div className="text-center text-xs sm:text-sm text-muted-foreground">

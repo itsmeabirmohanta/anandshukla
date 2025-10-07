@@ -1,4 +1,5 @@
 import { Skeleton } from "./skeleton";
+import { LumaSpin } from "./luma-spin";
 
 export const HeroSkeleton = () => (
   <div className="relative min-h-screen flex items-end md:items-center">
@@ -77,6 +78,23 @@ export const MessageSkeleton = () => (
 );
 
 export const PageSkeleton = () => (
+  <div className="min-h-screen bg-gradient-to-br from-light-bg via-white to-light-bg">
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center gap-6 animate-fade-up">
+        <LumaSpin size={80} />
+        <div className="text-center space-y-2">
+          <p className="text-lg font-medium text-foreground">Loading Website</p>
+          <p className="text-sm text-muted-foreground">
+            Please wait a moment...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Alternative: Keep the old skeleton style with added loader
+export const PageSkeletonDetailed = () => (
   <div className="min-h-screen">
     <HeaderSkeleton />
     <HeroSkeleton />

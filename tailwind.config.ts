@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -62,7 +67,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ["Poppins", "Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -104,14 +109,45 @@ export default {
             opacity: "1",
           },
         },
+        "luma-spin": {
+          "0%": {
+            inset: "0 35px 35px 0",
+          },
+          "12.5%": {
+            inset: "0 35px 0 0",
+          },
+          "25%": {
+            inset: "35px 35px 0 0",
+          },
+          "37.5%": {
+            inset: "35px 0 0 0",
+          },
+          "50%": {
+            inset: "35px 0 0 35px",
+          },
+          "62.5%": {
+            inset: "0 0 0 35px",
+          },
+          "75%": {
+            inset: "0 0 35px 35px",
+          },
+          "87.5%": {
+            inset: "0 0 35px 0",
+          },
+          "100%": {
+            inset: "0 35px 35px 0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.6s ease-out",
         "fade-in": "fade-in 0.4s ease-out",
+        "luma-spin": "luma-spin 2.5s infinite",
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
