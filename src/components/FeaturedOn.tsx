@@ -14,55 +14,71 @@ const FeaturedOn = () => {
       id: "logo-1",
       description: "LPU - Lovely Professional University",
       image: lpuLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-2",
       description: "Chandigarh University",
       image: chandigarhLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-3",
       description: "Graphic Era Hill University",
       image: graphicEraLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-4",
       description: "CGC Jhanjeri",
       image: cgcLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-5",
       description: "IEEE",
       image: ieeeLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-6",
       description: "NAAC",
       image: naacLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-7",
       description: "NIRF",
       image: nirfLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
     {
       id: "logo-8",
       description: "QS World University Rankings",
       image: qsLogo,
-      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      className:
+        "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+      loading: "lazy" as const,
     },
   ];
 
   return (
-    <Logos3 
-      heading="Featured On" 
+    <Logos3
+      heading="Featured On"
       logos={institutionLogos}
       className="bg-light-bg py-12 sm:py-16 md:py-20"
     />

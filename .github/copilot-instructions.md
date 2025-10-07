@@ -4,6 +4,12 @@
 
 Modern React 18 + TypeScript + Vite SPA with extensive security features, built using shadcn/ui components and Tailwind CSS. This is a single-page portfolio/profile site with strong emphasis on security, performance monitoring, and rate limiting.
 
+## General Guidelines
+
+- **DO NOT create documentation files automatically** - Only create/update docs when explicitly requested by the user
+- Focus on code implementation first
+- Keep responses concise and action-oriented
+
 ## Architecture Patterns
 
 ### Security-First Approach

@@ -1,18 +1,50 @@
 import messagePhoto from "@/assets/message-photo.png";
 import { Quote } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Message = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section
       id="message"
       className="relative bg-dark-bg py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(to right, rgba(4, 4, 4, 0.98) 0%, rgba(4, 4, 4, 0.92) 35%, rgba(4, 4, 4, 0.75) 60%, rgba(4, 4, 4, 0.5) 85%, transparent 100%), url(${messagePhoto})`,
-        backgroundSize: "cover",
-        backgroundPosition: "right center",
-        backgroundAttachment: "fixed",
-      }}
     >
+      {/* Background image with lazy loading */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-700 ${
+          imageLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(4, 4, 4, 0.98) 0%, rgba(4, 4, 4, 0.92) 35%, rgba(4, 4, 4, 0.75) 60%, rgba(4, 4, 4, 0.5) 85%, transparent 100%), url(${messagePhoto})`,
+          backgroundSize: "cover",
+          backgroundPosition: isMobile ? "70% center" : "right center",
+          backgroundAttachment: "fixed",
+        }}
+      />
+
+      {/* Loading placeholder */}
+      {!imageLoaded && <div className="absolute inset-0 bg-dark-bg" />}
+
+      {/* Lazy load background image */}
+      <img
+        src={messagePhoto}
+        alt=""
+        onLoad={() => setImageLoaded(true)}
+        className="hidden"
+        loading="lazy"
+        decoding="async"
+      />
       {/* Mobile bottom gradient for better text readability */}
       <div
         className="absolute inset-0 md:hidden pointer-events-none"

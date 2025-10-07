@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -146,8 +147,41 @@ export default {
         "fade-in": "fade-in 0.4s ease-out",
         "luma-spin": "luma-spin 2.5s infinite",
       },
+      animationDelay: {
+        "200": "200ms",
+        "300": "300ms",
+        "500": "500ms",
+        "700": "700ms",
+        "1000": "1000ms",
+      },
     },
   },
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    tailwindcssAnimate,
+    // Add animation delay utilities
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (utilities: Record<string, Record<string, string>>) => void;
+    }) {
+      const newUtilities: Record<string, Record<string, string>> = {
+        ".animation-delay-200": {
+          "animation-delay": "200ms",
+        },
+        ".animation-delay-300": {
+          "animation-delay": "300ms",
+        },
+        ".animation-delay-500": {
+          "animation-delay": "500ms",
+        },
+        ".animation-delay-700": {
+          "animation-delay": "700ms",
+        },
+        ".animation-delay-1000": {
+          "animation-delay": "1000ms",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 } satisfies Config;

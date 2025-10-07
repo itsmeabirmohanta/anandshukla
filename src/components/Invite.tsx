@@ -149,6 +149,8 @@ const Invite = () => {
                   src={invitePhoto}
                   alt="Prof. Anand Shukla at an event"
                   className="relative rounded-xl shadow-2xl w-full max-w-lg mx-auto lg:mx-0 group-hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Floating badge */}
