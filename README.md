@@ -1,73 +1,162 @@
-# Welcome to your Lovable project
+# Anand Replica Site
 
-## Project info
+[![CI](https://github.com/itsmeabirmohanta/anand-replica-site/workflows/CI/badge.svg)](https://github.com/itsmeabirmohanta/anand-replica-site/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**URL**: https://lovable.dev/projects/ed009d1a-f26e-42f1-a82f-23af3d07c428
+A modern, responsive replica website built with React, TypeScript, and Tailwind CSS. Features a clean design with advanced security implementations, performance optimizations, and accessibility features.
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- 🎨 Modern, responsive UI with Tailwind CSS
+- ⚡ Fast performance with Vite
+- 🔒 Advanced security features (XSS protection, CSRF tokens, rate limiting)
+- ♿ Accessibility-first approach
+- 📱 Mobile-friendly design
+- 🎭 Smooth animations and transitions
+- 🧩 Modular component architecture
+- 🔧 TypeScript for type safety
 
-**Use Lovable**
+## 🚀 Quick Start
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ed009d1a-f26e-42f1-a82f-23af3d07c428) and start prompting.
+### Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js 18.x or higher
+- npm or yarn
 
-**Use your preferred IDE**
+### Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. **Clone the repository**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   ```bash
+   git clone https://github.com/itsmeabirmohanta/anand-replica-site.git
+   cd anand-replica-site
+   ```
 
-Follow these steps:
+2. **Install dependencies**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Start the development server**
 
-# Step 3: Install the necessary dependencies.
-npm i
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Open your browser**
+
+   Navigate to `http://localhost:5173` to view the application.
+
+## 📦 Build
+
+To create a production build:
+
+```bash
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+To preview the production build locally:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## 🛠️ Tech Stack
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Framework:** React 18
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **UI Components:** Radix UI
+- **Icons:** Lucide React
+- **Routing:** React Router DOM
+- **Forms:** React Hook Form + Zod
+- **State Management:** TanStack Query
+- **Carousel:** Embla Carousel
 
-## What technologies are used for this project?
+## 📁 Project Structure
 
-This project is built with:
+```
+anand-replica-site/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   │   └── ui/         # Reusable UI components
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   ├── pages/          # Page components
+│   ├── utils/          # Helper utilities
+│   ├── App.tsx         # Main app component
+│   └── main.tsx        # Entry point
+├── .github/            # GitHub workflows and templates
+└── docs/               # Documentation files
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔒 Security Features
 
-## How can I deploy this project?
+This project includes comprehensive security measures:
 
-Simply open [Lovable](https://lovable.dev/projects/ed009d1a-f26e-42f1-a82f-23af3d07c428) and click on Share -> Publish.
+- XSS (Cross-Site Scripting) protection
+- CSRF (Cross-Site Request Forgery) tokens
+- Content Security Policy (CSP)
+- Rate limiting
+- Session timeout management
+- Bot detection
+- Clickjacking prevention
 
-## Can I connect a custom domain to my Lovable project?
+For more details, see [SECURITY_FEATURES.md](docs/SECURITY_FEATURES.md).
 
-Yes, you can!
+## 🎨 Components
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The project uses [shadcn/ui](https://ui.shadcn.com/) components for a consistent and modern UI. All components are:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Fully customizable
+- Accessible (WCAG compliant)
+- TypeScript ready
+- Dark mode compatible
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](docs/CONTRIBUTING.md) for details on how to submit pull requests, report issues, and contribute to the project.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📚 Documentation
+
+- [Architecture Overview](docs/ARCHITECTURE.md)
+- [Security Features](docs/SECURITY_FEATURES.md)
+- [Implementation Summary](docs/IMPLEMENTATION_SUMMARY.md)
+- [Quick Start Guide](docs/QUICK_START.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
+- [Changelog](docs/CHANGELOG.md)
+- [Known Issues](docs/KNOWN_ISSUES.md)
+- [Code of Conduct](docs/CODE_OF_CONDUCT.md)
+
+## 🐛 Bug Reports & Feature Requests
+
+If you find a bug or have a feature request, please open an issue on our [GitHub Issues](https://github.com/itsmeabirmohanta/anand-replica-site/issues) page.
+
+## 👨‍💻 Author
+
+**Abir Mohanta**
+
+- GitHub: [@itsmeabirmohanta](https://github.com/itsmeabirmohanta)
+
+## 🙏 Acknowledgments
+
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Lucide](https://lucide.dev/)
+
+---
+
+Made with ❤️ by Abir Mohanta

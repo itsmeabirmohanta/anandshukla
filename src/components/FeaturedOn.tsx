@@ -1,38 +1,71 @@
+import { Logos3 } from "@/components/ui/logos3";
+import lpuLogo from "@/assets/logos/lpu.png";
+import chandigarhLogo from "@/assets/logos/cu.png";
+import graphicEraLogo from "@/assets/logos/graphic-era.png";
+import cgcLogo from "@/assets/logos/cgc-jhanjera.png";
+import ieeeLogo from "@/assets/logos/ieee.png";
+import naacLogo from "@/assets/logos/naac.png";
+import nirfLogo from "@/assets/logos/nirf.png";
+import qsLogo from "@/assets/logos/qs.png";
+
 const FeaturedOn = () => {
-  const institutions = [
-    "LPU",
-    "Chandigarh University",
-    "Graphic Era Hill University",
-    "CGC Jhanjeri",
-    "IEEE",
-    "NAAC",
-    "NIRF",
-    "QS",
-    "NBA",
+  const institutionLogos = [
+    {
+      id: "logo-1",
+      description: "LPU - Lovely Professional University",
+      image: lpuLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-2",
+      description: "Chandigarh University",
+      image: chandigarhLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-3",
+      description: "Graphic Era Hill University",
+      image: graphicEraLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-4",
+      description: "CGC Jhanjeri",
+      image: cgcLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-5",
+      description: "IEEE",
+      image: ieeeLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-6",
+      description: "NAAC",
+      image: naacLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-7",
+      description: "NIRF",
+      image: nirfLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
+    {
+      id: "logo-8",
+      description: "QS World University Rankings",
+      image: qsLogo,
+      className: "h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300",
+    },
   ];
 
   return (
-    <section className="bg-light-bg py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12 animate-fade-up">
-          <h2 className="text-4xl font-bold text-foreground inline-block relative">
-            Featured On
-            <span className="absolute bottom-0 left-0 right-0 h-1 bg-accent transform translate-y-2"></span>
-          </h2>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
-          {institutions.map((name) => (
-            <div
-              key={name}
-              className="text-2xl md:text-3xl font-bold text-foreground/80 hover:text-foreground transition-colors"
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <Logos3 
+      heading="Featured On" 
+      logos={institutionLogos}
+      className="bg-light-bg py-12 sm:py-16 md:py-20"
+    />
   );
 };
 
