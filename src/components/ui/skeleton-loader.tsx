@@ -78,15 +78,13 @@ export const MessageSkeleton = () => (
 );
 
 export const PageSkeleton = () => (
-  <div className="min-h-screen bg-gradient-to-br from-light-bg via-white to-light-bg">
+  <div className="min-h-screen bg-dark-bg">
     <div className="flex items-center justify-center min-h-screen">
       <div className="flex flex-col items-center gap-6 animate-fade-up">
-        <LumaSpin size={80} />
+        <LumaSpin size={80} className="[&>span]:!shadow-accent" />
         <div className="text-center space-y-2">
-          <p className="text-lg font-medium text-foreground">Loading Website</p>
-          <p className="text-sm text-muted-foreground">
-            Please wait a moment...
-          </p>
+          <p className="text-lg font-medium text-white">Loading Website</p>
+          <p className="text-sm text-white/70">Please wait a moment...</p>
         </div>
       </div>
     </div>
